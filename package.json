@@ -1,8 +1,8 @@
 {
   "name": "easy-tcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library for passing JSON messages trough TCP/IP sockets. Contains both client and server and example code.",
-  "main": "index.js",
+  "main": "easy-tcp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
