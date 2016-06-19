@@ -1,4 +1,5 @@
-  easy = require('./easy-tcp'), connect = easy.connect, listen = easy.listen;
+  connect= require('./easy-tcp').connect
+  listen = require('./easy-tcp').listen
   port = 3000;
   //Server
   listen(port, function(client){

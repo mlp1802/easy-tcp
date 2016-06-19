@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "carrier": "^0.3.0",
-    "prelude-ls": "^1.1.2",
+    "prelude-ls": "^1.1.2"
   }
 }

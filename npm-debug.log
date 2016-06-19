@@ -1,0 +1,72 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/mikkel/.nvm/versions/node/v5.9.1/bin/node',
+1 verbose cli   '/home/mikkel/.nvm/versions/node/v5.9.1/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   './' ]
+2 info using npm@3.7.3
+3 info using node@v5.9.1
+4 verbose publish [ './' ]
+5 silly cache add args [ './', null ]
+6 verbose cache add spec ./
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: './',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: './',
+7 silly cache add   spec: '/home/mikkel/src/ob3d/easy-tcp',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/mikkel/.npm/easy-tcp/1.0.0/package.tgz not in flight; packing
+9 verbose correctMkdir /home/mikkel/.npm correctMkdir not in flight; initializing
+10 info lifecycle easy-tcp@1.0.0~prepublish: easy-tcp@1.0.0
+11 silly lifecycle easy-tcp@1.0.0~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/home/mikkel/.npm/easy-tcp/1.0.0/package.tgz',
+12 verbose tar pack   '/home/mikkel/src/ob3d/easy-tcp' ]
+13 verbose tarball /home/mikkel/.npm/easy-tcp/1.0.0/package.tgz
+14 verbose folder /home/mikkel/src/ob3d/easy-tcp
+15 verbose addLocalTarball adding from inside cache /home/mikkel/.npm/easy-tcp/1.0.0/package.tgz
+16 verbose correctMkdir /home/mikkel/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd easy-tcp@1.0.0
+18 verbose afterAdd /home/mikkel/.npm/easy-tcp/1.0.0/package/package.json not in flight; writing
+19 verbose correctMkdir /home/mikkel/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /home/mikkel/.npm/easy-tcp/1.0.0/package/package.json written
+21 silly publish { name: 'easy-tcp',
+21 silly publish   version: '1.0.0',
+21 silly publish   description: 'A library for passing JSON messages trough TCP/IP sockets. Contains both client and server and example code.',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+21 silly publish   author: { name: 'Mikkel Petersen' },
+21 silly publish   license: 'ISC',
+21 silly publish   dependencies: { carrier: '^0.3.0', 'prelude-ls': '^1.1.2' },
+21 silly publish   readme: '###Description\r\nLibrary for passing JSON messages from tcp clients and servers.\r\n\r\n###Install\r\n\r\n```\r\nnpm install easy-tcp --save\r\n\r\n```\r\n###Server\r\n```javascript\r\nlisten = require(\'./easy-tcp\').listen\r\nport = 3000;\r\n//Server\r\nlisten(port, function(client){\r\n  console.log("Client connected");\r\n  return client.on("chat", function(m){\r\n    return client.send({\r\n      _name: "chat", //this is a reserved word, the name of the message\r\n      text: "Got your message buddy !"\r\n    });\r\n  });\r\n});\r\n```\r\n###Client\r\n```javascript\r\nconnect = require(\'./easy-tcp\').connect\r\n//Client\r\n  connect("localhost", port, function(client){\r\n    client.on("chat", function(message){\r\n      return console.log("Chat message: " + message.text);\r\n    });\r\n    return client.send({\r\n      _name: "chat", //this is a reserved word, the name of the message\r\n      text: "Let\'s chat !"\r\n    });\r\n  });\r\n\r\n```\r\nWhen done with client\r\n```javascript\r\nclient.close()\r\n```\r\n\r\n\r\n\r\n\r\n\r\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'dc0bef1b03c7df3b495c8fbcec40702d88d33174',
+21 silly publish   _id: 'easy-tcp@1.0.0',
+21 silly publish   _shasum: 'e28fe31d98557f0552538699ec6aeebdca6a5f4a',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name easy-tcp
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry uri https://registry.npmjs.org/easy-tcp
+27 verbose publish registryBase https://registry.npmjs.org/
+28 silly publish uploading /home/mikkel/.npm/easy-tcp/1.0.0/package.tgz
+29 verbose stack Error: auth required for publishing
+29 verbose stack     at CachingRegistryClient.publish (/home/mikkel/.nvm/versions/node/v5.9.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:30:14)
+29 verbose stack     at /home/mikkel/.nvm/versions/node/v5.9.1/lib/node_modules/npm/lib/publish.js:137:14
+29 verbose stack     at mapToRegistry (/home/mikkel/.nvm/versions/node/v5.9.1/lib/node_modules/npm/lib/utils/map-to-registry.js:55:3)
+29 verbose stack     at publish_ (/home/mikkel/.nvm/versions/node/v5.9.1/lib/node_modules/npm/lib/publish.js:106:3)
+29 verbose stack     at Array.<anonymous> (/home/mikkel/.nvm/versions/node/v5.9.1/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+29 verbose stack     at LOOP (/home/mikkel/.nvm/versions/node/v5.9.1/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+29 verbose stack     at LOOP (/home/mikkel/.nvm/versions/node/v5.9.1/lib/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
+29 verbose stack     at chain (/home/mikkel/.nvm/versions/node/v5.9.1/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+29 verbose stack     at /home/mikkel/.nvm/versions/node/v5.9.1/lib/node_modules/npm/lib/publish.js:72:5
+29 verbose stack     at RES (/home/mikkel/.nvm/versions/node/v5.9.1/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+30 verbose cwd /home/mikkel/src/ob3d/easy-tcp
+31 error Linux 3.19.0-32-generic
+32 error argv "/home/mikkel/.nvm/versions/node/v5.9.1/bin/node" "/home/mikkel/.nvm/versions/node/v5.9.1/bin/npm" "publish" "./"
+33 error node v5.9.1
+34 error npm  v3.7.3
+35 error code ENEEDAUTH
+36 error need auth auth required for publishing
+37 error need auth You need to authorize this machine using `npm adduser`
+38 verbose exit [ 1, true ]
