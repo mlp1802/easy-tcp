@@ -16,7 +16,7 @@
     client.on("chat", function(message){
        console.log("Chat message: " + message.text);
     });
-    return client.send({
+    client.send({
       _name: "chat",
       text: "Let's chat !"
     });
