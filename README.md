@@ -15,8 +15,8 @@ port = 3000;
 listen(port, function(client){
   console.log("Client connected");
   //listen for "chat" message (message marked with _name=chat)
-  return client.on("chat", function(m){
-    return client.send({
+  client.on("chat", function(m){
+    client.send({
       _name: "chat", //this is a reserved word, the name of the message
       text: "Got your message buddy !"
     });
@@ -30,9 +30,10 @@ connect = require('easy-tcp').connect
 connect("localhost", port, function(client){
   //listen for servers response, which is also a chat message
   client.on("chat", function(message){
-    return console.log("Chat message: " + message.text);
+     console.log("Chat message: " + message.text);
   });
-  return client.send({
+  //send a message
+  client.send({
     _name: "chat", //this is a reserved word, the name of the message
     text: "Let's chat !"
   });
@@ -43,8 +44,3 @@ When done with client
 ```javascript
 client.close()
 ```
-
-
-
-
-
