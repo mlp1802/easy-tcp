@@ -14,6 +14,7 @@ port = 3000;
 //start server
 listen(port, function(client){
   console.log("Client connected");
+  //listen for "chat" message (message marked with _name=chat)
   return client.on("chat", function(m){
     return client.send({
       _name: "chat", //this is a reserved word, the name of the message
@@ -27,6 +28,7 @@ listen(port, function(client){
 connect = require('easy-tcp').connect
 //connect to server
 connect("localhost", port, function(client){
+  //listen for servers response, which is also a chat message
   client.on("chat", function(message){
     return console.log("Chat message: " + message.text);
   });
