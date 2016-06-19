@@ -1,5 +1,5 @@
 ###Description
-Library for passing JSON messages from tcp clients and servers.
+Library for easily creatign a TCP socket server that listen to JSON messages. Server and client included.
 
 ###Install
 
