@@ -9,22 +9,22 @@ npm install easy-tcp --save
 ```
 ###Server
 ```javascript
-easy = require('./easy-tcp'), listen = easy.listen;
-  port = 3000;
-  //Server
-  listen(port, function(client){
-    console.log("Client connected");
-    return client.on("chat", function(m){
-      return client.send({
-        _name: "chat",
-        text: "Got your message buddy !"
-      });
+listen = require('./easy-tcp').listen
+port = 3000;
+//Server
+listen(port, function(client){
+  console.log("Client connected");
+  return client.on("chat", function(m){
+    return client.send({
+      _name: "chat",
+      text: "Got your message buddy !"
     });
   });
+});
 ```
 ###Client
 ```javascript
-easy = require('./easy-tcp'), connect = easy.connect
+connect = require('./easy-tcp').connect
 //Client
   connect("localhost", port, function(client){
     client.on("chat", function(message){
@@ -37,10 +37,3 @@ easy = require('./easy-tcp'), connect = easy.connect
   });
 
 ```
-
-
-
-
-
-
-
