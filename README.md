@@ -44,3 +44,8 @@ When done with client
 ```javascript
 client.close()
 ```
+
+If you need to access the underlying socket
+```javascript
+var socket = client.socket
+```
