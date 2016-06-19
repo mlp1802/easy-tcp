@@ -11,7 +11,7 @@ npm install easy-tcp --save
 ```javascript
 listen = require('./easy-tcp').listen
 port = 3000;
-//Server
+//start server
 listen(port, function(client){
   console.log("Client connected");
   return client.on("chat", function(m){
@@ -25,16 +25,16 @@ listen(port, function(client){
 ###Client
 ```javascript
 connect = require('./easy-tcp').connect
-//Client
-  connect("localhost", port, function(client){
-    client.on("chat", function(message){
-      return console.log("Chat message: " + message.text);
-    });
-    return client.send({
-      _name: "chat", //this is a reserved word, the name of the message
-      text: "Let's chat !"
-    });
+//connect to server
+connect("localhost", port, function(client){
+  client.on("chat", function(message){
+    return console.log("Chat message: " + message.text);
   });
+  return client.send({
+    _name: "chat", //this is a reserved word, the name of the message
+    text: "Let's chat !"
+  });
+});
 
 ```
 When done with client
