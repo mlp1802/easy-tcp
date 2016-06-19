@@ -16,7 +16,7 @@ listen(port, function(client){
   console.log("Client connected");
   return client.on("chat", function(m){
     return client.send({
-      _name: "chat",
+      _name: "chat", //this is a reserved word, the name of the message
       text: "Got your message buddy !"
     });
   });
@@ -31,9 +31,18 @@ connect = require('./easy-tcp').connect
       return console.log("Chat message: " + message.text);
     });
     return client.send({
-      _name: "chat",
+      _name: "chat", //this is a reserved word, the name of the message
       text: "Let's chat !"
     });
   });
 
 ```
+When done with client
+```javascript
+client.close()
+```
+
+
+
+
+
