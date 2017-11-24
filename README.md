@@ -1,13 +1,13 @@
 ### Description
 Library for easily creating a TCP socket server that listen to JSON messages. Server and client included.
 
-###Install
+### Install
 
 ```
 npm install easy-tcp --save
 
 ```
-###Server
+### Server
 ```javascript
 listen = require('easy-tcp').listen
 port = 3000;
@@ -23,7 +23,7 @@ listen(port, function(client){
   });
 });
 ```
-###Client
+### Client
 ```javascript
 connect = require('easy-tcp').connect
 //connect to server
